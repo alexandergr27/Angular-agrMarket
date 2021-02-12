@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h3>Lista de productos:</h3>
+        </div>
+    </div>
+</div>
+<div class="card-body">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="text-center">CODIGO</th>
+                <th class="text-center">DESCRIPCIÓN</th>
+                <th class="text-center">MARCA</th>
+                <th class="text-center">PRESENTACIÓN</th>
+                <th class="text-center">PRECIO</th>
+                <th class="text-center">PASILLO</th>
+                <th class="text-center">OPCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let products of product" class="text-center">
+                <td>{{products.code}}</td>
+                <td>{{products.description}}</td>
+                <td>{{products.brand}}</td>
+                <td>{{products.presentation}}</td>
+                <td>{{products.price}}</td>
+                <td>{{products.location}}</td>
+                <td><button (click)="editProduct(products)" class="btn btn-success" style="margin-right: 10px;">Editar</button><button (click)="delete(products)" class="btn btn-danger">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>
+
